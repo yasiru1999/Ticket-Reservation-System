@@ -23,12 +23,12 @@ namespace TicketReservationApp.Services.UserService
             return _users.Find(user => true).ToList();
         }
 
-        public User GetById(string id)
+        public User Get(string id)
         {
             return _users.Find(user => user.Id == id).FirstOrDefault();
         }
 
-        public void Delete(string id)
+        public void Remove(string id)
         {
             _users.DeleteOne(user => user.Id == id);
         }

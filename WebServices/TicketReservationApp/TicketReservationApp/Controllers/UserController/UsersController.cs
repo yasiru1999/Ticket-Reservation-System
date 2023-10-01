@@ -4,7 +4,7 @@ using TicketReservationApp.Services.UserService;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
-namespace TicketReservationApp.Controllers
+namespace TicketReservationApp.Controllers.UserController
 {
     [Route("api/[controller]")]
     [ApiController]
@@ -28,7 +28,7 @@ namespace TicketReservationApp.Controllers
         [HttpGet("{id}")]
         public ActionResult<User> Get(string id)
         {
-            var user = userService.GetById(id);
+            var user = userService.Get(id);
 
             if (user == null)
             {
@@ -49,7 +49,7 @@ namespace TicketReservationApp.Controllers
         [HttpPut("{id}")]
         public ActionResult Put(string id, [FromBody] User user)
         {
-            var existingUser = userService.GetById(id);
+            var existingUser = userService.Get(id);
             if (existingUser == null)
             {
                 return NotFound($"User with Id = {id} not found");
@@ -63,14 +63,14 @@ namespace TicketReservationApp.Controllers
         [HttpDelete("{id}")]
         public ActionResult Delete(string id)
         {
-            var user = userService.GetById(id);
+            var user = userService.Get(id);
 
-            if(user == null)
+            if (user == null)
             {
                 return NotFound($"User with Id = {id} not found");
             }
 
-            userService.Delete(user.Id);
+            userService.Remove(user.Id);
 
             return Ok($"User with Id = {id} deleted");
         }
