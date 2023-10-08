@@ -1,6 +1,6 @@
 <resources>
     <string name="app_name">Ticket Reservation</string>
-    <string name="username">Username</string>
+    <string name="nic">NIC</string>
     <string name="password">Password</string>
     <string name="login">Login</string>
 
