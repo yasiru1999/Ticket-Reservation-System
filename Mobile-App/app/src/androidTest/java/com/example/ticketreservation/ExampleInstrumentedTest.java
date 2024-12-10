@@ -1,5 +1,5 @@
 package com.example.ticketreservation;
-//yasiru navoda jayasekara
+//yasiru navoda
 import android.content.Context;
 
 import androidx.test.platform.app.InstrumentationRegistry;
